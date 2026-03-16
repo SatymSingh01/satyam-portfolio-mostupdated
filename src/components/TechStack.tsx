@@ -12,21 +12,28 @@ import {
 } from "@react-three/rapier";
 
 const textureLoader = new THREE.TextureLoader();
+
+// Use only images that already exist in your current project folder
 const imageUrls = [
+  "/images/Python.webp",
+  "/images/FastAPI.png",
+  "/images/OPENAI.png",
+  "/images/LANGCHAIN.png",
+  "/images/DOCKER.png",
+  "/images/KUBERNETES.png",
+  "/images/AWS.png",
+  "/images/SUPABASE.png",
+  "/images/REDIS.png",
   "/images/react2.webp",
   "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
   "/images/typescript.webp",
-  "/images/javascript.webp",
 ];
+
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
+const spheres = [...Array(20)].map(() => ({
   scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
 }));
 
@@ -49,7 +56,9 @@ function SphereGeo({
 
   useFrame((_state, delta) => {
     if (!isActive) return;
+
     delta = Math.min(0.1, delta);
+
     const impulse = vec
       .copy(api.current!.translation())
       .normalize()
@@ -101,6 +110,7 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
   useFrame(({ pointer, viewport }) => {
     if (!isActive) return;
+
     const targetVec = vec.lerp(
       new THREE.Vector3(
         (pointer.x * viewport.width) / 2,
@@ -109,6 +119,7 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
       ),
       0.2
     );
+
     ref.current?.setNextKinematicTranslation(targetVec);
   });
 
@@ -130,27 +141,34 @@ const TechStack = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
+      const workSection = document.getElementById("work");
+
+      if (!workSection) return;
+
+      const threshold = workSection.getBoundingClientRect().top;
       setIsActive(scrollY > threshold);
     };
+
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
       element.addEventListener("click", () => {
         const interval = setInterval(() => {
           handleScroll();
         }, 10);
+
         setTimeout(() => {
           clearInterval(interval);
         }, 1000);
       });
     });
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const materials = useMemo(() => {
     return textures.map(
       (texture) =>
@@ -167,8 +185,11 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack">
-      <h2> My Techstack</h2>
+    <div className="techstack" id="techstack">
+      <h2>My Tech Stack</h2>
+      <p className="techstack-subtext">
+      Python, FastAPI, OpenAI, LangChain, Docker, Kubernetes, AWS, Supabase, Redis, React, Next.js, and TypeScript.
+      </p>
 
       <Canvas
         shadows
@@ -178,6 +199,7 @@ const TechStack = () => {
         className="tech-canvas"
       >
         <ambientLight intensity={1} />
+
         <spotLight
           position={[20, 20, 25]}
           penumbra={1}
@@ -186,9 +208,11 @@ const TechStack = () => {
           castShadow
           shadow-mapSize={[512, 512]}
         />
+
         <directionalLight position={[0, 5, -4]} intensity={2} />
+
         <Physics gravity={[0, 0, 0]}>
-          <Pointer isActive={isActive} />
+          { <Pointer isActive={isActive} />}
           {spheres.map((props, i) => (
             <SphereGeo
               key={i}
@@ -198,11 +222,13 @@ const TechStack = () => {
             />
           ))}
         </Physics>
+
         <Environment
           files="/models/char_enviorment.hdr"
           environmentIntensity={0.5}
           environmentRotation={[0, 4, 2]}
         />
+
         <EffectComposer enableNormalPass={false}>
           <N8AO color="#0f002c" aoRadius={2} intensity={1.15} />
         </EffectComposer>

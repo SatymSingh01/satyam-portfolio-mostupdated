@@ -8,36 +8,40 @@ interface Props {
   link?: string;
 }
 
-const WorkImage = (props: Props) => {
+const WorkImage = ({ image, alt, video: videoFile, link }: Props) => {
   const [isVideo, setIsVideo] = useState(false);
-  const [video, setVideo] = useState("");
-  const handleMouseEnter = async () => {
-    if (props.video) {
-      setIsVideo(true);
-      const response = await fetch(`src/assets/${props.video}`);
-      const blob = await response.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      setVideo(blobUrl);
-    }
+  const [videoSrc, setVideoSrc] = useState("");
+
+  const handleMouseEnter = () => {
+    if (!videoFile) return;
+
+    // videos should live in /public/videos/
+    setVideoSrc(`/videos/${videoFile}`);
+    setIsVideo(true);
   };
 
   return (
     <div className="work-image">
       <a
         className="work-image-in"
-        href={props.link}
+        href={link || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cursor="disable"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsVideo(false)}
-        target="_blank"
-        data-cursor={"disable"}
       >
-        {props.link && (
+        {link && (
           <div className="work-link">
             <MdArrowOutward />
           </div>
         )}
-        <img src={props.image} alt={props.alt} />
-        {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
+
+        <img src={image} alt={alt || "project preview"} />
+
+        {isVideo && videoSrc && (
+          <video src={videoSrc} autoPlay muted playsInline loop />
+        )}
       </a>
     </div>
   );

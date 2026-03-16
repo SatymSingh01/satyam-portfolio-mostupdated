@@ -6,60 +6,64 @@ const Contact = () => {
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
         <h3>Contact</h3>
+
         <div className="contact-flex">
+
+          {/* Email + Education */}
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:Satyamchittyal21@gmail.com" data-cursor="disable">
-                Satyamchittyal21@gmail.com
+              <a
+                href="mailto:singh.satyam@northeastern.edu"
+                data-cursor="disable"
+              >
+                singh.satyam@northeastern.edu
               </a>
             </p>
+
             <h4>Education</h4>
-            <p>BSc in Computer Science</p>
+            <p>
+              MS Informatics (Cloud Computing – AWS) <br />
+              Northeastern University, Boston
+            </p>
           </div>
+
+          {/* Social Links */}
           <div className="contact-box">
             <h4>Social</h4>
+
             <a
-              href="https://github.com/Satyam"
+              href="https://github.com/SatymSingh01"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
-              Github <MdArrowOutward />
+              GitHub <MdArrowOutward />
             </a>
+
             <a
-              href="https://www.linkedin.com/in/Satyam-chityal-2a70141b3"
+              href="https://linkedin.com/in/satyamsingh"
               target="_blank"
+              rel="noreferrer"
               data-cursor="disable"
               className="contact-social"
             >
-              Linkedin <MdArrowOutward />
-            </a>
-            <a
-              href="https://x.com/Satyam_official"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com/theSatyamchityal"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
+              LinkedIn <MdArrowOutward />
             </a>
           </div>
+
+          {/* Footer */}
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Satyam Chityal</span>
+              Designed and Developed <br /> by <span>Satyam Singh</span>
             </h2>
+
             <h5>
-              <MdCopyright /> 2025
+              <MdCopyright /> 2026
             </h5>
           </div>
+
         </div>
       </div>
     </div>

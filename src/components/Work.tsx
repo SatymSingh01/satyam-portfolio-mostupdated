@@ -5,35 +5,40 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    title: "Facturas Agent SaaS",
+    category: "Agentic AI Browser Automation Platform",
+    tools:
+      "React, TypeScript, FastAPI, Supabase, Redis, Docker, WebSocket, CI/CD",
+    image: "/images/FACTURAS.png",
   },
   {
-    title: "Radix",
-    category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    title: "ESG Document Analysis Platform",
+    category: "AI-Powered Enterprise Intelligence Platform",
+    tools:
+      "React, Next.js, Flask, Supabase, Neo4j, Redis, GPT-4, LangChain, RAG, Docker",
+    image: "/images/ESG.png",
   },
   {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
+    title: "CPL Automation Chatbot",
+    category: "AI-Powered Academic Eligibility Assistant",
+    tools:
+      "Python, Flask, IBM Watsonx.ai, Watson Assistant, LangChain, Docker, IBM Cloud",
+    image: "/images/IBM.webp",
   },
   {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
+    title: "Real Estate Property Agentic Chatbot",
+    category: "AI-Powered Real Estate Property Assistant",
+    tools:
+      "Python, LangChain, OpenAI, TypeScript, React, Next.js, and LangGraph, Google Gemini, Gemini API, Gemini SDK.",
+    image: "/images/REAL.webp",
   },
   {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
-  },
+    title: "Real Estate Property Agentic Chatbot",
+    category: "AI-Powered Real Estate Property Assistant",
+    tools:
+      "Python, LangChain, OpenAI, TypeScript, React, Next.js, and LangGraph, Google Gemini, Gemini API, Gemini SDK.",
+    image: "/images/REAL.webp",
+  }
 ];
 
 const Work = () => {
@@ -66,11 +71,10 @@ const Work = () => {
     <div className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
-          My <span>Work</span>
+          Featured <span>Projects</span>
         </h2>
 
         <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
           <button
             className="carousel-arrow carousel-arrow-left"
             onClick={goToPrev}
@@ -79,6 +83,7 @@ const Work = () => {
           >
             <MdArrowBack />
           </button>
+
           <button
             className="carousel-arrow carousel-arrow-right"
             onClick={goToNext}
@@ -88,7 +93,6 @@ const Work = () => {
             <MdArrowForward />
           </button>
 
-          {/* Slides */}
           <div className="carousel-track-container">
             <div
               className="carousel-track"
@@ -103,17 +107,18 @@ const Work = () => {
                       <div className="carousel-number">
                         <h3>0{index + 1}</h3>
                       </div>
+
                       <div className="carousel-details">
                         <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
+                        <p className="carousel-category">{project.category}</p>
+
                         <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
+                          <span className="tools-label">Tech Stack</span>
                           <p>{project.tools}</p>
                         </div>
                       </div>
                     </div>
+
                     <div className="carousel-image-wrapper">
                       <WorkImage image={project.image} alt={project.title} />
                     </div>
@@ -123,13 +128,13 @@ const Work = () => {
             </div>
           </div>
 
-          {/* Dot Indicators */}
           <div className="carousel-dots">
             {projects.map((_, index) => (
               <button
                 key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
+                className={`carousel-dot ${
+                  index === currentIndex ? "carousel-dot-active" : ""
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"

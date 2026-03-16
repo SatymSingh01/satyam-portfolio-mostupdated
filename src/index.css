@@ -103,27 +103,47 @@ body {
   flex-wrap: nowrap;
 }
 
+
 .techstack {
   width: 100%;
   position: relative;
-  overflow: clip;
-  height: var(--vh);
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: -100px;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .techstack h2 {
-  font-size: 80px;
+  font-size: clamp(40px, 6vw, 80px);
   text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 120px;
-  left: 0;
+  position: relative;
+  margin: 0;
   font-weight: 400;
   text-transform: uppercase;
+  z-index: 5;
 }
 
+.techstack-subtext {
+  position: relative;
+  width: min(760px, 90%);
+  margin: 14px auto 0 auto;
+  text-align: center;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.85;
+  z-index: 5;
+}
+
+.tech-canvas {
+  display: block;
+  width: 100% !important;
+  height: 70vh !important;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
 @media screen and (min-width: 768px) {
   body {
     --cWidth: 94%;

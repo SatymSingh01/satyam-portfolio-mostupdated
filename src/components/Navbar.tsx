@@ -26,6 +26,7 @@ const Navbar = () => {
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
+
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
           e.preventDefault();
@@ -35,34 +36,40 @@ const Navbar = () => {
         }
       });
     });
+
     window.addEventListener("resize", () => {
       ScrollSmoother.refresh(true);
     });
   }, []);
+
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
+          SS
         </a>
+
         <a
-          href="mailto:Satyamchittyal21@gmail.com"
+          href="mailto:singh.satyam@northeastern.edu"
           className="navbar-connect"
           data-cursor="disable"
         >
-          Satyamchittyal21@gmail.com
+          singh.satyam@northeastern.edu
         </a>
+
         <ul>
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
             </a>
           </li>
+
           <li>
             <a data-href="#work" href="#work">
               <HoverLinks text="WORK" />
             </a>
           </li>
+
           <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />

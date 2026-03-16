@@ -224,13 +224,14 @@
   position: relative;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .landing-h2-info-1 {
-  position: absolute;
-  top: 0;
+  position: relative;
+  margin-left: 12px;
 }
 
 h2.landing-info-h2 {
@@ -245,8 +246,8 @@ h2.landing-info-h2 {
 }
 
 .landing-h2-2 {
-  position: absolute;
-  top: 0;
+  position: relative;
+  margin-left: 12px;
 }
 
 .landing-info-h2::after {

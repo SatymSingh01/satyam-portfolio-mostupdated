@@ -6,11 +6,13 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Full Stack Developer with 4+ years of experience building scalable web
-          applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
-          in microservices architecture, CMS development, and low-code platforms.
-          Passionate about creating high-performance, production-ready solutions
-          from concept to deployment.
+          I’m Satyam Shailesh Singh, a Python AI Engineer with 3+ years of
+          experience building production-grade Agentic AI and GenAI platforms.
+          My work spans FastAPI microservices, RAG pipelines, LangChain, OpenAI
+          GPT-4, event-driven backend systems, and cloud-native deployments
+          using Docker and Kubernetes. I enjoy turning complex business problems
+          into scalable, reliable products, especially in AI, automation,
+          document intelligence, and enterprise applications.
         </p>
       </div>
     </div>
