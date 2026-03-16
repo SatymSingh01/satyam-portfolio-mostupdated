@@ -1,16 +1,13 @@
-# My Portfolio Wesbite - Overview 🚀
+# Satyam Singh Portfolio
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+Personal developer portfolio built with React, TypeScript and Vite.
 
-## Instructions 🛠️
+## Tech Stack
+React
+TypeScript
+Three.js
+GSAP
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
-
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
-
-![Portfolio-Preview](public/images/preview.png)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+## Running locally
+npm install
+npm run dev
