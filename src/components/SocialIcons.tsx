@@ -78,17 +78,7 @@ const SocialIcons = () => {
         </span>
       </div>
 
-      <a
-        className="resume-button"
-        href="/Satyam-Singh-Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
+     
     </div>
   );
 };
