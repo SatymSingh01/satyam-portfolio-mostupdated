@@ -69,7 +69,7 @@ const SocialIcons = () => {
 
         <span>
           <a
-            href="https://www.linkedin.com/in/satyam-shailesh-singh"
+            href="https://www.linkedin.com/in/satyamsingh0101/"
             target="_blank"
             rel="noopener noreferrer"
           >
